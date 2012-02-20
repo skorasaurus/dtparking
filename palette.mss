@@ -53,7 +53,10 @@ Map { font-directory: url(./fonts); }
 @residential:       @land * 0.98;
 @commercial:        @land * 0.97;
 @industrial:        @land * 0.96;
-@parking:           #ededed;
+
+
+
+@parking:           #df4c4c;
 
 /* ================================================================== */
 /* ROAD COLORS
@@ -145,13 +148,3 @@ Map { font-directory: url(./fonts); }
 
 /* ****************************************************************** */
 
-
-
-
-
-#clubs {
-  line-color:#f98800;
-  line-width:0.5;
-  polygon-opacity:1;
-  polygon-fill:#f98800;
-}
