@@ -184,7 +184,7 @@
 }
 
 /* ---- Other small places ------------------------------------------ */
-/*
+
 #place::small[type='village'][zoom>=13],
 #place::small[type='suburb'][zoom>=13],
 #place::small[type='hamlet'][zoom>=13] {
@@ -227,7 +227,7 @@
     text-line-spacing: 6;
   }
 }
-*/
+
 #place::small[type='locality'][zoom>=15] {
   text-name:'[name]';
   text-face-name:@sans;

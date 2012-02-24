@@ -53,10 +53,7 @@ Map { font-directory: url(./fonts); }
 @residential:       @land * 0.98;
 @commercial:        @land * 0.97;
 @industrial:        @land * 0.96;
-
-
-
-@parking:           #df4c4c;
+/* @parking:           #a52a2a; */
 
 /* ================================================================== */
 /* ROAD COLORS
@@ -71,7 +68,7 @@ Map { font-directory: url(./fonts); }
  *         inner fill (inline).
  */
 
-@motorway_line:     #b35c5c;
+@motorway_line:     #914242;
 @motorway_fill:     lighten(@motorway_line,10%);
 @motorway_case:     @motorway_line * 0.9;
 
@@ -147,4 +144,23 @@ Map { font-directory: url(./fonts); }
 @village_halo:      @place_halo;
 
 /* ****************************************************************** */
+
+
+
+
+
+#clubs {
+  line-color:#f98800;
+  line-width:0.5;
+  polygon-opacity:1;
+  polygon-fill:#f98800;
+}
+
+
+#plots {
+  marker-width:3;
+  marker-fill:#f45;
+  marker-line-color:#813;
+  marker-allow-overlap:true;
+}
 

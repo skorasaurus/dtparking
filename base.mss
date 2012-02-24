@@ -29,7 +29,7 @@
   [type='hospital']      { polygon-fill: @hospital; }
   [type='industrial']    { polygon-fill: @industrial; }
   [type='park']          { polygon-fill: @park; }
-  [type='parking']       { polygon-fill: @parking; }
+
   [type='pedestrian']    { polygon-fill: @pedestrian_fill; }
   [type='pitch']         { polygon-fill: @sports; }
   [type='residential']   { polygon-fill: @residential; }
@@ -211,3 +211,20 @@ Map { background-color: @water; }
   line-color:darken(@park,5);
 
 }
+
+/* ================================================================== */
+/* Parking
+/* ================================================================== */
+
+/*
+#parking {
+  line-color:#594;
+  line-width:0.5;
+  polygon-opacity:1;
+  polygon-fill:#ae8;
+}
+
+
+#parking
+ [type='garage'] = #FCFBE7;  
+*/
