@@ -149,17 +149,11 @@ Map { font-directory: url(./fonts); }
 
 
 
-#clubs {
-  line-color:#f98800;
-  line-width:0.5;
-  polygon-opacity:1;
-  polygon-fill:#f98800;
-}
 
 
 #plots {
-  marker-width:3;
-  marker-fill:#f45;
+  marker-width:1;
+  marker-fill:#324;
   marker-line-color:#813;
   marker-allow-overlap:true;
 }

@@ -1,18 +1,20 @@
 {
   "bounds": [
-    -81.805,
-    41.4475,
-    -81.5722,
-    41.5745
+    -81.7394,
+    41.4809,
+    -81.6309,
+    41.5349
   ],
   "center": [
-    -81.6917,
-    41.5005,
-    14
+    -81.6852,
+    41.5041,
+    12
   ],
   "format": "png",
-  "interactivity": {},
-  "minzoom": 13,
+  "interactivity": {
+    "fields": []
+  },
+  "minzoom": 10,
   "maxzoom": 17,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
@@ -386,7 +388,10 @@
         "password": "",
         "table": "( SELECT way, highway AS type\n  FROM planet_osm_roads\n  WHERE highway IN ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link')\n) AS data",
         "type": "postgis",
-        "user": "skorasaurus"
+        "user": "skorasaurus",
+        "id": "roads_med",
+        "project": "brightdtparking",
+        "srs": null
       },
       "class": "",
       "geometry": "linestring",
@@ -472,29 +477,6 @@
       "name": "ne_places",
       "srs": "",
       "srs-name": "autodetect"
-    },
-    {
-      "Datasource": {
-        "dbname": "parking",
-        "extent": "-9114839.90615323 5070082.39993749 -9076134.11920441 5102141.6578814",
-        "geometry_field": "way",
-        "host": "localhost",
-        "id": "place",
-        "key_field": "",
-        "password": "",
-        "project": "foss4g-2011",
-        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-        "table": "( SELECT way, place AS type, name, z_order, population\n  FROM planet_osm_point\n  WHERE place in ('state', 'city', 'town', 'village', 'hamlet', 'suburb', 'neighbourhood', 'locality')\n  ORDER BY population DESC\n) AS data",
-        "type": "postgis",
-        "user": "skorasaurus"
-      },
-      "class": "",
-      "geometry": "point",
-      "id": "place",
-      "name": "place",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "srs-name": "900913",
-      "status": "on"
     },
     {
       "Datasource": {
@@ -610,10 +592,43 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "srs-name": "900913",
       "status": "on"
+    },
+    {
+      "geometry": "point",
+      "id": "plots",
+      "class": "",
+      "Datasource": {
+        "file": "/home/skorasaurus/gis/dt-parking/parkinglots-take4.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "plots"
+    },
+    {
+      "geometry": "polygon",
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, \"parking\" AS type\n  FROM planet_osm_polygon\n  WHERE parking NOT IN ('0','false', 'no')\n  ORDER BY ST_YMin(ST_Envelope(way)) DESC\n) AS data",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "",
+        "dbname": "parking",
+        "host": "localhost",
+        "user": "skorasaurus",
+        "password": "",
+        "id": "parking",
+        "project": "brightdtparking",
+        "srs": null
+      },
+      "id": "parking",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "parking"
     }
   ],
   "attribution": "Data © OpenStreetMap (and) contributors, CC-BY-SA",
   "description": "",
   "name": "bright-dt-parking",
-  "legend": "\nThis color box - \n\nDowntown Cleveland Parking Map \n\nCC-BY-SA OpenStreetMap"
+  "legend": "<div class='my-legend'>\n<div class='title'>Downtown Cleveland Parking Map </div>\n<div class='scale'>\n  <ul class='labels'>\n    <li><span style='background:#8DD3C7;'></span>Suface</li>\n    <li><span style='background:#FFFFB3;'></span>Multi-Story</li>\n    <li><span style='background:#BEBADA;'></span>Underground</li>\n    <li><span style='background:#FB8072;'></span>Four</li>\n  </ul>\n</div>\n<div class='source'>Source: <a href=\"#link to source\">Name of source</a></div>\n</div>\n\n<style type='text/css'>\n  .wax-legend .title {\n    text-align: left;\n    margin-bottom: 5px;\n    font-weight: bold;\n    font-size: 90%;\n    }\n  .wax-legend .scale ul {\n    margin: 0;\n    margin-bottom: 5px;\n    padding: 0;\n    float: left;\n    list-style: none;\n    }\n  .wax-legend .scale ul li {\n    font-size: 80%;\n    list-style: none;\n    margin-left: 0;\n    line-height: 18px;\n    margin-bottom: 2px;\n    }\n  .wax-legend ul.labels li span {\n    float: left;\n    height: 16px;\n    width: 30px;\n    margin-right: 5px;\n    margin-left: 0;\n    border: 1px solid #999;\n    }\n  .wax-legend ul li span {\n    display: block;\n    margin-left: 0;\n    }\n  .wax-legend .source {\n    font-size: 70%;\n    color: #999;\n    clear: both;\n    }\n  .wax-attribution a,\n  .wax-legend a {\n    color: #777;\n    }\n</style>\n\n\nCC-BY-SA OpenStreetMap"
 }

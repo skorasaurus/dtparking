@@ -216,15 +216,23 @@ Map { background-color: @water; }
 /* Parking
 /* ================================================================== */
 
-/*
 #parking {
   line-color:#594;
   line-width:0.5;
   polygon-opacity:1;
-  polygon-fill:#ae8;
 }
 
 
-#parking
- [type='garage'] = #FCFBE7;  
-*/
+
+#parking[type='surface']{
+    polygon-fill:#ff6347;  
+}
+
+#parking[type='multi-storey']{
+    polygon-fill:#7FFF00;   /* Neon, lime green */
+}
+
+#parking[type='underground']{
+    polygon-fill:#ffa07a;  
+}
+
