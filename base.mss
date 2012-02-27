@@ -229,7 +229,7 @@ Map { background-color: @water; }
 }
 
 #parking[type='multi-storey']{
-    polygon-fill:#7FFF00;   /* Neon, lime green */
+    polygon-fill:#FB8072;   /* Neon, #7FFF00; lime green */
 }
 
 #parking[type='underground']{
