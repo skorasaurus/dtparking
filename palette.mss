@@ -145,16 +145,11 @@ Map { font-directory: url(./fonts); }
 
 /* ****************************************************************** */
 
-
-
-
-
-
-
 #plots {
-  marker-width:1;
-  marker-fill:#324;
-  marker-line-color:#813;
+  marker-height: 10;
+  marker-fill:#fff;          /*#332244; */
+  marker-line-color:#fff;
   marker-allow-overlap:true;
 }
+
 

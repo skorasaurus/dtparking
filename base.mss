@@ -29,7 +29,6 @@
   [type='hospital']      { polygon-fill: @hospital; }
   [type='industrial']    { polygon-fill: @industrial; }
   [type='park']          { polygon-fill: @park; }
-
   [type='pedestrian']    { polygon-fill: @pedestrian_fill; }
   [type='pitch']         { polygon-fill: @sports; }
   [type='residential']   { polygon-fill: @residential; }
@@ -235,4 +234,5 @@ Map { background-color: @water; }
 #parking[type='underground']{
     polygon-fill:#ffa07a;  
 }
+
 
