@@ -31,11 +31,18 @@
       "Total estimated land value",
       "Total estimated market value",
       "Amount delinquent taxes",
-      "Tax abatement code"
+      "Tax abatement code",
+      "LATITUDE",
+      "LONGITUDE",
+      "Land use code",
+      "Land use code description",
+      "District",
+      "FILTER",
+      "FILTER1"
     ],
-    "layer": "plots",
+    "layer": "parking",
     "template_teaser": "",
-    "template_full": "Owner: {{Owner}}} \n\nParcel #: {{{PARCEL}}}\n \nAddress: {{{ADDRESS}}} {{{NUMBER}}} {{{STREET}}} {{{block}}} \n\n{{{Property size (sq ft): parcel record}}}\n\n{{{Frontage parcel (in feet)}}} {{{Depth of parcel (in feet)}}} {{{Lot Shape}}} {{{Number of buildings on property}}} {{{Condition of building}}} {{{Total usable area in square feet}}} {{{Year built}}} {{{Building taxable estimated market value}}} {{{Land taxable estimated market value}}} {{{Total taxable estimated market value}}} {{{Total estimated building value}}} {{{Total estimated land value}}} {{{Total estimated market value}}} {{{Amount delinquent taxes}}} {{{Tax abatement code}}} \n\n{{{LATITUDE}}} {{{LONGITUDE}}} {{{Land use code}}} {{{Land use code description}}} {{{Owner}}} {{{Property size (sq ft): parcel record}}} {{{Frontage parcel (in feet)}}} {{{Depth of parcel (in feet)}}} {{{Lot Shape}}} {{{Number of buildings on property}}} {{{Condition of building}}} {{{Total usable area in square feet}}} {{{Year built}}} {{{Building taxable estimated market value}}} {{{Land taxable estimated market value}}} {{{Total taxable estimated market value}}} {{{Total estimated building value}}} {{{Total estimated land value}}} {{{Total estimated market value}}} {{{Amount delinquent taxes}}} {{{Tax abatement code}}} {{{PARCEL}}} {{{ADDRESS}}} {{{NUMBER}}} {{{STREET}}} {{{block}}} {{{District}}} {{{FILTER}}} {{{FILTER1}}}"
+    "template_full": ""
   },
   "minzoom": 10,
   "maxzoom": 17,
@@ -596,20 +603,6 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "srs-name": "900913",
       "status": "on"
-    },
-    {
-      "geometry": "point",
-      "id": "plots",
-      "class": "",
-      "Datasource": {
-        "file": "/home/skorasaurus/gis/dt-parking/parkinglots-take4.geojson",
-        "id": "plots",
-        "project": "brightdtparking",
-        "srs": null
-      },
-      "srs-name": "WGS84",
-      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-      "name": "plots"
     },
     {
       "geometry": "polygon",

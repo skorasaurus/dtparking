@@ -144,12 +144,18 @@ Map { font-directory: url(./fonts); }
 @village_halo:      @place_halo;
 
 /* ****************************************************************** */
-
+/*
 #plots {
   marker-height: 10;
-  marker-fill:#fff;          /*#332244; */
+  marker-fill:#fff;         
   marker-line-color:#fff;
   marker-allow-overlap:true;
 }
 
 
+#plots2 {
+  marker-width:3;
+  marker-fill:#f45;
+  marker-line-color:#813;
+  marker-allow-overlap:true;
+} */
