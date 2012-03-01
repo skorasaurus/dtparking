@@ -12,34 +12,7 @@
   ],
   "format": "png",
   "interactivity": {
-    "fields": [
-      "Owner",
-      "PARCEL",
-      "ADDRESS",
-      "NUMBER",
-      "STREET",
-      "block",
-      "Lot Shape",
-      "Number of buildings on property",
-      "Condition of building",
-      "Total usable area in square feet",
-      "Year built",
-      "Building taxable estimated market value",
-      "Land taxable estimated market value",
-      "Total taxable estimated market value",
-      "Total estimated building value",
-      "Total estimated land value",
-      "Total estimated market value",
-      "Amount delinquent taxes",
-      "Tax abatement code",
-      "LATITUDE",
-      "LONGITUDE",
-      "Land use code",
-      "Land use code description",
-      "District",
-      "FILTER",
-      "FILTER1"
-    ],
+    "fields": [],
     "layer": "parking",
     "template_teaser": "",
     "template_full": ""
@@ -630,6 +603,6 @@
   "attribution": "Data © OpenStreetMap (and) contributors, CC-BY-SA",
   "description": "",
   "name": "Downtown Cleveland Parking Map",
-  "legend": "<div class='my-legend'>\n<div class='title'>Downtown Cleveland Parking Map </div>\n<div class='scale'>\n  <ul class='labels'>\n    <li><span style='background:#ff6347;'></span>Suface</li>\n    <li><span style='background:#ffa07a;'></span>Multi-Story</li>\n    <li><span style='background:#FB8072;'></span>Underground</li>\n  </ul>\n</div>\n<div class='source'>Source: <a href=\"#link to source\">CC-BY-SA OpenStreetMap</a> By: Will Skora \nVersion 1.0.1-alpha - 2012.02.27</div>\n</div>\n\n<style type='text/css'>\n  .wax-legend .title {\n    text-align: left;\n    margin-bottom: 5px;\n    font-weight: bold;\n    font-size: 90%;\n    }\n  .wax-legend .scale ul {\n    margin: 0;\n    margin-bottom: 5px;\n    padding: 0;\n    float: left;\n    list-style: none;\n    }\n  .wax-legend .scale ul li {\n    font-size: 80%;\n    list-style: none;\n    margin-left: 0;\n    line-height: 18px;\n    margin-bottom: 2px;\n    }\n  .wax-legend ul.labels li span {\n    float: left;\n    height: 16px;\n    width: 30px;\n    margin-right: 5px;\n    margin-left: 0;\n    border: 1px solid #999;\n    }\n  .wax-legend ul li span {\n    display: block;\n    margin-left: 0;\n    }\n  .wax-legend .source {\n    font-size: 70%;\n    color: #999;\n    clear: both;\n    }\n  .wax-attribution a,\n  .wax-legend a {\n    color: #777;\n    }\n</style>\n\n\n",
+  "legend": "<div class='my-legend'>\n<div class='title'>Downtown Cleveland Parking Map </div>\n<div class='scale'>\n  <ul class='labels'>\n    <li><span style='background:#FF8908;'></span>Surface</li>\n    <li><span style='background:#08FF3E;'></span>Multi-Story</li>\n    <li><span style='background:#6208FF;'></span>Underground</li>\n  </ul>\n</div>\n<div class='source'>Source: <a href=\"#link to source\">CC-BY-SA OpenStreetMap</a> By: Will Skora \nVersion 1.0.1-alpha - 2012.03.01</div>\n</div>\n\n<style type='text/css'>\n  .wax-legend .title {\n    text-align: left;\n    margin-bottom: 5px;\n    font-weight: bold;\n    font-size: 90%;\n    }\n  .wax-legend .scale ul {\n    margin: 0;\n    margin-bottom: 5px;\n    padding: 0;\n    float: left;\n    list-style: none;\n    }\n  .wax-legend .scale ul li {\n    font-size: 80%;\n    list-style: none;\n    margin-left: 0;\n    line-height: 18px;\n    margin-bottom: 2px;\n    }\n  .wax-legend ul.labels li span {\n    float: left;\n    height: 16px;\n    width: 30px;\n    margin-right: 5px;\n    margin-left: 0;\n    border: 1px solid #999;\n    }\n  .wax-legend ul li span {\n    display: block;\n    margin-left: 0;\n    }\n  .wax-legend .source {\n    font-size: 70%;\n    color: #999;\n    clear: both;\n    }\n  .wax-attribution a,\n  .wax-legend a {\n    color: #777;\n    }\n</style>\n\n\n",
   "version": "1.0.1-alpha"
 }
