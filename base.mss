@@ -28,7 +28,7 @@
   [type='grass']         { polygon-fill: @park; }
   [type='hospital']      { polygon-fill: @hospital; }
   [type='industrial']    { polygon-fill: @industrial; }
-  [type='park']          { polygon-fill: @park; }
+  [type='park']          { polygon-fill: @park; polygon-opacity:.4; }
   [type='pedestrian']    { polygon-fill: @pedestrian_fill; }
   [type='pitch']         { polygon-fill: @sports; }
   [type='residential']   { polygon-fill: @residential; }
@@ -224,15 +224,15 @@ Map { background-color: @water; }
 
 
 #parking[type='surface']{
-    polygon-fill:#ff6347;  
+    polygon-fill:#FF8908;  
 }
 
 #parking[type='multi-storey']{
-    polygon-fill:#FB8072;   /* Neon, #7FFF00; lime green */
+    polygon-fill:#08FF3E;   /* Neon, #7FFF00; lime green */
 }
 
 #parking[type='underground']{
-    polygon-fill:#ffa07a;  
+    polygon-fill:#6208FF;  
 }
 
 
