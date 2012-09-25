@@ -28,8 +28,7 @@
   [type='grass']         { polygon-fill: @park; }
   [type='hospital']      { polygon-fill: @hospital; }
   [type='industrial']    { polygon-fill: @industrial; }
-  [type='park']          { polygon-fill: @park; }
-
+  [type='park']          { polygon-fill: @park; polygon-opacity:.4; }
   [type='pedestrian']    { polygon-fill: @pedestrian_fill; }
   [type='pitch']         { polygon-fill: @sports; }
   [type='residential']   { polygon-fill: @residential; }
@@ -54,10 +53,7 @@
   [zoom>=12] { line-width: 2.0; }
 }
  
-#landuse_overlays[type='wetland'][zoom>11] {
-  [zoom>11][zoom<=14] { polygon-pattern-file:url(img/swamp-16.png); }
-  [zoom>14] { polygon-pattern-file:url(img/swamp-32.png);}
-  }
+
 
 /* ---- BUILDINGS ---- */
 #buildings[zoom>10][zoom<=16] {
@@ -223,16 +219,16 @@ Map { background-color: @water; }
 }
 
 
-
 #parking[type='surface']{
-    polygon-fill:#ff6347;  
+    polygon-fill:#7fff66;  
 }
 
 #parking[type='multi-storey']{
-    polygon-fill:#FB8072;   /* Neon, #7FFF00; lime green */
+    polygon-fill:#ccff66;   /* Neon, #7FFF00; lime green */
 }
 
 #parking[type='underground']{
-    polygon-fill:#ffa07a;  
+    polygon-fill:#ffe566;  
 }
+
 
