@@ -1,9 +1,9 @@
 {
   "bounds": [
-    -81.7195,
-    41.4814,
-    -81.65,
-    41.5269
+    -81.7098,
+    41.4911,
+    -81.6644,
+    41.5242
   ],
   "center": [
     -81.6852,
@@ -18,7 +18,7 @@
     "template_full": ""
   },
   "minzoom": 14,
-  "maxzoom": 17,
+  "maxzoom": 18,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
   "Stylesheet": [
     "palette.mss",
@@ -49,7 +49,7 @@
     },
     {
       "Datasource": {
-        "file": "/home/skors/Documents/MapBox/project/open-streets-style/open-streets/layers/processed_p.shp"
+        "file": "/home/skors/Documents/MapBox/project/shared/processed_p.shp"
       },
       "class": "shp",
       "geometry": "polygon",
@@ -67,7 +67,7 @@
     },
     {
       "Datasource": {
-        "file": "/home/skors/Documents/MapBox/project/open-streets-style/open-streets/layers/shoreline_300.shp"
+        "file": "/home/skors/Documents/MapBox/project/shared/shoreline_300.shp"
       },
       "class": "shp",
       "geometry": "polygon",
@@ -82,6 +82,28 @@
         83.66933299999998
       ],
       "advanced": {}
+    },
+    {
+      "geometry": "polygon",
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, \"parking\" AS type\n  FROM planet_osm_polygon\n  WHERE parking NOT IN ('0','false', 'no')\n  ORDER BY ST_YMin(ST_Envelope(way)) DESC\n) AS data",
+        "extent": "",
+        "key_field": "",
+        "geometry_field": "",
+        "dbname": "parking",
+        "host": "localhost",
+        "user": "postgres",
+        "password": "postgres",
+        "id": "parking",
+        "project": "brightdtparking",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "parking",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "name": "parking"
     },
     {
       "Datasource": {
@@ -596,28 +618,6 @@
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "srs-name": "900913",
       "status": "on"
-    },
-    {
-      "geometry": "polygon",
-      "Datasource": {
-        "type": "postgis",
-        "table": "( SELECT way, \"parking\" AS type\n  FROM planet_osm_polygon\n  WHERE parking NOT IN ('0','false', 'no')\n  ORDER BY ST_YMin(ST_Envelope(way)) DESC\n) AS data",
-        "extent": "",
-        "key_field": "",
-        "geometry_field": "",
-        "dbname": "parking",
-        "host": "localhost",
-        "user": "postgres",
-        "password": "postgres",
-        "id": "parking",
-        "project": "brightdtparking",
-        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
-      },
-      "id": "parking",
-      "class": "",
-      "srs-name": "900913",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "name": "parking"
     }
   ],
   "scale": 1,
@@ -625,5 +625,5 @@
   "attribution": "Data © OpenStreetMap (and) contributors, CC-BY-SA",
   "description": "",
   "name": "Downtown Cleveland Parking Map",
-  "legend": "<div class='my-legend'>\n<div class='title'>Downtown Cleveland Public Parking Map </div>\n<div class='scale'>\n  <ul class='labels'>\n    <li><span style='background:#FF8908;'></span>Surface</li>\n    <li><span style='background:#08FF3E;'></span>Multi-Story</li>\n    <li><span style='background:#6208FF;'></span>Underground</li>\n  </ul>\n</div>\n<div class='source'></a> By: Will Skora \nVersion 1.0.2-alpha - 2012.03.07</div>\n</div>\n\n<style type='text/css'>\n  .wax-legend .title {\n    text-align: left;\n    margin-bottom: 5px;\n    font-weight: bold;\n    font-size: 90%;\n    }\n  .wax-legend .scale ul {\n    margin: 0;\n    margin-bottom: 5px;\n    padding: 0;\n    float: left;\n    list-style: none;\n    }\n  .wax-legend .scale ul li {\n    font-size: 80%;\n    list-style: none;\n    margin-left: 0;\n    line-height: 18px;\n    margin-bottom: 2px;\n    }\n  .wax-legend ul.labels li span {\n    float: left;\n    height: 16px;\n    width: 30px;\n    margin-right: 5px;\n    margin-left: 0;\n    border: 1px solid #999;\n    }\n  .wax-legend ul li span {\n    display: block;\n    margin-left: 0;\n    }\n  .wax-legend .source {\n    font-size: 70%;\n    color: #999;\n    clear: both;\n    }\n  .wax-attribution a,\n  .wax-legend a {\n    color: #777;\n    }\n</style>\n\n\n"
+  "legend": "<div class='my-legend'>\n<div class='title'>Downtown Cleveland Public Parking Map </div>\n<div class='scale'>\n  <ul class='labels'>\n    <li><span style='background:#7fff66;'></span>Surface</li>\n    <li><span style='background:#ccff66;'></span>Multi-Story</li>\n    <li><span style='background:#ffe566;'></span>Underground</li>\n  </ul>\n</div>\n<div class='source'></a> By: Will Skora \nVersion 1.0.4 - 2013.03.22  Data: OpenStreetMap Contributors </div>\n\n\n<style type='text/css'>\n  .wax-legend .title {\n    text-align: left;\n    margin-bottom: 5px;\n    font-weight: bold;\n    font-size: 90%;\n    }\n  .wax-legend .scale ul {\n    margin: 0;\n    margin-bottom: 5px;\n    padding: 0;\n    float: left;\n    list-style: none;\n    }\n  .wax-legend .scale ul li {\n    font-size: 80%;\n    list-style: none;\n    margin-left: 0;\n    line-height: 18px;\n    margin-bottom: 2px;\n    }\n  .wax-legend ul.labels li span {\n    float: left;\n    height: 16px;\n    width: 30px;\n    margin-right: 5px;\n    margin-left: 0;\n    border: 1px solid #999;\n    }\n  .wax-legend ul li span {\n    display: block;\n    margin-left: 0;\n    }\n  .wax-legend .source {\n    font-size: 70%;\n    color: #999;\n    clear: both;\n    }\n  .wax-attribution a,\n  .wax-legend a {\n    color: #777;\n    }\n</style>\n\n\n"
 }
