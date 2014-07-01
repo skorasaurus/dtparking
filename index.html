@@ -19,17 +19,34 @@
             var basemap = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/skorasaurus.5eb85050/{z}/{x}/{y}.png', {maxZoom: 19});
             var latlng = new L.LatLng(41.501860,-81.635799);
                 
-            var mizzap = new L.Map('map', {center: latlng, zoom: 10, layers: [basemap]});
+            var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap]});
                 
+   // adds all markers to map, with default styling
 
-    featLayer.loadURL('dtparking.geojson').addTo(mizzap);
 
+   // go through each marker in layer, style based on property in parking=
+   featLayer.on('ready', function(e) {
+
+         L.geoJson(featLayer, {
+            style: function(feature) {
+                switch (feature.properties.parking) {
+                    case 'multi-storey': return {color: "#ff0000"};
+                    case 'surface':   return {color: "#0000ff"};
+                    case 'underground':   return {color: "#0000ff"};
+                }
+            }
+
+        })
+    }).addTo(mizzap);
+
+       featLayer.loadURL('dtparking.geojson').addTo(mizzap);
 
 
             </script>
         
-        
-		
+<!--  some starting values for experimentation
+ fillOpacity: 0.7;  -->
+
 		</div>
 	</body>
 </html>
