@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8" />
-<script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
-  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
 
     </head>
 	<body>
@@ -13,34 +13,38 @@
         <script> 
 		
 
-        // initialize feature layer for use later: 
-        var featLayer = L.mapbox.featureLayer(); 
-
-            var basemap = new L.TileLayer('http://{s}.tiles.mapbox.com/v3/skorasaurus.5eb85050/{z}/{x}/{y}.png', {maxZoom: 19});
+      
+            var basemap = new L.TileLayer('https://{s}.tiles.mapbox.com/v3/skorasaurus.5eb85050/{z}/{x}/{y}.png', {maxZoom: 19});
             var latlng = new L.LatLng(41.501860,-81.635799);
                 
             var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap]});
                 
-   // adds all markers to map, with default styling
+
+              // initialize feature layer for use later: 
+        var featLayer = L.mapbox.featureLayer().addTo(mizzap); 
+    
+    // add feature layer but do not add the default marker styling. 
+    featLayer.loadURL('dtparking.geojson').setFilter(function() { return false; })
+    .addTo(mizzap);
 
 
    // go through each marker in layer, style based on property in parking=
-   featLayer.on('ready', function(e) {
+// featLayer.on('ready', function() {
+  // the layer has been fully loaded now, and you can
+  // call .getTileJSON and investigate its properties
 
-         L.geoJson(featLayer, {
+        L.geoJson(featLayer, {
             style: function(feature) {
                 switch (feature.properties.parking) {
                     case 'multi-storey': return {color: "#ff0000"};
-                    case 'surface':   return {color: "#0000ff"};
+                    case 'surface':   return {color: "#AD3535"};
                     case 'underground':   return {color: "#0000ff"};
                 }
             }
 
-        })
-    }).addTo(mizzap);
+        }).addTo(mizzap);
 
-       featLayer.loadURL('dtparking.geojson').addTo(mizzap);
-
+//});
 
             </script>
         
