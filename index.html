@@ -7,8 +7,41 @@
 
     </head>
 	<body>
+<style>
+.legend label,
+.legend span {
+  display:block;
+  float:left;
+  height:15px;
+  width:20%;
+  text-align:center;
+  font-size:9px;
+  color:#808080;
+  }
+</style>
 
+<!-- Set the display of this container to none so we can
+     add it programmatically to `legendControl` -->
+<div id='legend' style='display:none;'>
+  <strong>The Title or Explanation of your Map</strong>
+  <nav class='legend clearfix'>
+    <span style='background:#F1EEF6;'></span>
+    <span style='background:#BDC9E1;'></span>
+    <span style='background:#74A9CF;'></span>
+    <span style='background:#2B8CBE;'></span>
+    <span style='background:#045A8D;'></span>
+    <label>0 - 20%</label>
+    <label>40%</label>
+    <label>60%</label>
+    <label>80%</label>
+    <label>100%</label>
+    <small>Source: <a href="#link to source">Name of source</a></small>
+</div>
     <div id="map" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
+
+
+
+
 
         <script> 
 		
@@ -20,31 +53,32 @@
             var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap]});
                 
 
-              // initialize feature layer for use later: 
-        var featLayer = L.mapbox.featureLayer().addTo(mizzap); 
-    
-    // add feature layer but do not add the default marker styling. 
-    featLayer.loadURL('dtparking.geojson').setFilter(function() { return false; })
-    .addTo(mizzap);
+              // initializes feature layer for use later: 
+               var featLayer = L.mapbox.featureLayer();
 
+ // loads geojson
+ // example from: http://leafletjs.com/examples/geojson.html
+    featLayer.loadURL('dtparking.geojson', {
+            style: function(feature) {
+                switch (feature.properties.parking) {
+                    case 'multi-storey': return {color: "#ff0000"};
+                    case "surface":   return {color: "#AD3535"};
+                    case 'underground':   return {color: "#FF1717"};
+                }
+            }
+        }).addTo(mizzap);; 
 
    // go through each marker in layer, style based on property in parking=
 // featLayer.on('ready', function() {
   // the layer has been fully loaded now, and you can
   // call .getTileJSON and investigate its properties
 
-        L.geoJson(featLayer, {
-            style: function(feature) {
-                switch (feature.properties.parking) {
-                    case 'multi-storey': return {color: "#ff0000"};
-                    case 'surface':   return {color: "#AD3535"};
-                    case 'underground':   return {color: "#0000ff"};
-                }
-            }
 
-        }).addTo(mizzap);
 
 //});
+
+  
+ // mizzap.legendControl.addLegend(document.getElementById('legend').innerHTML);
 
             </script>
         
