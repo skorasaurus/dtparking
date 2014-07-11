@@ -56,26 +56,18 @@
               // initializes feature layer for use later: 
                var featLayer = L.mapbox.featureLayer();
 
- // loads geojson
+ // go through each marker in layer, style based on property in parking=
  // example from: http://leafletjs.com/examples/geojson.html
-    featLayer.loadURL('dtparking.geojson', {
-            style: function(feature) {
-                switch (feature.properties.parking) {
+    featLayer.loadURL('dtparking.geojson')
+      .on('ready', function(layer) { 
+          this.eachLayer(function(feature) { 
+             switch (layer.properties.parking) {
                     case 'multi-storey': return {color: "#ff0000"};
                     case "surface":   return {color: "#AD3535"};
                     case 'underground':   return {color: "#FF1717"};
-                }
-            }
-        }).addTo(mizzap);; 
-
-   // go through each marker in layer, style based on property in parking=
-// featLayer.on('ready', function() {
-  // the layer has been fully loaded now, and you can
-  // call .getTileJSON and investigate its properties
-
-
-
-//});
+                    }
+          })
+      }); 
 
   
  // mizzap.legendControl.addLegend(document.getElementById('legend').innerHTML);
