@@ -59,15 +59,15 @@
  // go through each marker in layer, style based on property in parking=
  // example from: http://leafletjs.com/examples/geojson.html
     featLayer.loadURL('dtparking.geojson')
-      .on('ready', function(layer) { 
+      .on('ready', function() { 
           this.eachLayer(function(feature) { 
-             switch (layer.properties.parking) {
+             switch (feature.feature.properties.parking) {
                     case 'multi-storey': return {color: "#ff0000"};
                     case "surface":   return {color: "#AD3535"};
                     case 'underground':   return {color: "#FF1717"};
                     }
           })
-      }); 
+      }).addTo(mizzap); 
 
   
  // mizzap.legendControl.addLegend(document.getElementById('legend').innerHTML);
