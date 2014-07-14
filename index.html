@@ -44,7 +44,7 @@
 
       
             var basemap = new L.TileLayer('https://{s}.tiles.mapbox.com/v3/skorasaurus.5eb85050/{z}/{x}/{y}.png', {maxZoom: 19});
-            var latlng = new L.LatLng(41.501860,-81.635799);
+            var latlng = new L.LatLng(41.489035,-81.723261);
                 
             var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap]});
                 
@@ -55,24 +55,27 @@
  // go through each marker in layer, style based on property in parking=
  // example from: http://leafletjs.com/examples/geojson.html
  // 
-    featLayer.loadURL('dtparking.geojson').addTo(mizzap);  
+   // featLayer.loadURL('dtparking.geojson').addTo(mizzap);  
   
+
+   featLayer.loadURL('dtparking.geojson'); 
+
     featLayer.on('ready', function() { 
           this.eachLayer(function(feature) { 
           style: getMyStyle; 
           })
-    })            
+               
 
           function getMyStyle(feature) {
             return {
-              fillOpacity: 0.98, 
+              fillOpacity: 0.08, 
               fillColor: getColor(feature.properties.parking)
            //   color: getColor(feature.properties.density) * 0.4; 
-            }
+            };
           } 
 
           function getColor(thevalue){
-                  show (thevalue);
+                  console.log(thevalue);
                     //return {
                     
                     // thevalue = "multi-storey" ? '#ff0000': 
@@ -81,6 +84,7 @@
                     // ;
                  //   }
           }
+    }).addTo(mizzap);  
    
 
   
@@ -89,8 +93,7 @@
 
             </script>
         
-<!--  some starting values for experimentation
- fillOpacity: 0.7;  -->
+
 
     </div>
   </body>
