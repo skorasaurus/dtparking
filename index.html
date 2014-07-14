@@ -7,36 +7,6 @@
 
     </head>
   <body>
-<style>
-.legend label,
-.legend span {
-  display:block;
-  float:left;
-  height:15px;
-  width:20%;
-  text-align:center;
-  font-size:9px;
-  color:#808080;
-  }
-</style>
-
-<!-- Set the display of this container to none so we can
-     add it programmatically to `legendControl` -->
-<div id='legend' style='display:none;'>
-  <strong>The Title or Explanation of your Map</strong>
-  <nav class='legend clearfix'>
-    <span style='background:#F1EEF6;'></span>
-    <span style='background:#BDC9E1;'></span>
-    <span style='background:#74A9CF;'></span>
-    <span style='background:#2B8CBE;'></span>
-    <span style='background:#045A8D;'></span>
-    <label>0 - 20%</label>
-    <label>40%</label>
-    <label>60%</label>
-    <label>80%</label>
-    <label>100%</label>
-    <small>Source: <a href="#link to source">Name of source</a></small>
-</div>
     <div id="map" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
 
         <script> 
@@ -44,7 +14,7 @@
 
       
             var basemap = new L.TileLayer('https://{s}.tiles.mapbox.com/v3/skorasaurus.5eb85050/{z}/{x}/{y}.png', {maxZoom: 19});
-            var latlng = new L.LatLng(41.489035,-81.723261);
+            var latlng = new L.LatLng(41.500880,-81.694036);
                 
             var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap]});
                 
@@ -55,7 +25,6 @@
 
  // go through each polygon in layer, style based on property in parking=
  // example from: http://leafletjs.com/examples/geojson.html
- // https://www.mapbox.com/mapbox.js/example/v1.0.0/choropleth/
 
    // featLayer.loadURL('dtparking.geojson').addTo(mizzap);  
   
@@ -67,7 +36,7 @@
           style: getMyStyle; 
           })
                
-
+ // https://www.mapbox.com/mapbox.js/example/v1.0.0/choropleth/
           function getMyStyle(feature) {
             return {
               weight: 4, 
