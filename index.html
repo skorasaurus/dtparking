@@ -48,19 +48,21 @@
                 
             var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap]});
                 
-
+              // https://www.mapbox.com/foundations/building-a-store-locator/
               // initializes feature layer for use later: 
+              // https://github.com/maptime/maptime-bites/blob/gh-pages/00004/index.html
                var featLayer = L.mapbox.featureLayer();
 
- // go through each marker in layer, style based on property in parking=
+ // go through each polygon in layer, style based on property in parking=
  // example from: http://leafletjs.com/examples/geojson.html
- // 
+ // https://www.mapbox.com/mapbox.js/example/v1.0.0/choropleth/
+
    // featLayer.loadURL('dtparking.geojson').addTo(mizzap);  
   
 
    featLayer.loadURL('dtparking.geojson'); 
 
-    featLayer.on('ready', function() { 
+   featLayer.on('ready', function() { 
           this.eachLayer(function(feature) { 
           style: getMyStyle; 
           })
@@ -68,9 +70,10 @@
 
           function getMyStyle(feature) {
             return {
+              weight: 4, 
               fillOpacity: 0.08, 
-              fillColor: getColor(feature.properties.parking)
-           //   color: getColor(feature.properties.density) * 0.4; 
+              // fillColor: getColor(feature.properties.parking)
+              //   color: getColor(feature.properties.density) * 0.4; 
             };
           } 
 
