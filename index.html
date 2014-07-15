@@ -21,7 +21,7 @@
               // https://www.mapbox.com/foundations/building-a-store-locator/
               // initializes feature layer for use later: 
               // https://github.com/maptime/maptime-bites/blob/gh-pages/00004/index.html
-               var featLayer = L.mapbox.featureLayer();
+               var featLayer = L.mapbox.featureLayer().addTo(mizzap);
 
  // go through each polygon in layer, style based on property in parking=
  // example from: http://leafletjs.com/examples/geojson.html
@@ -32,22 +32,28 @@
    featLayer.loadURL('dtparking.geojson'); 
 
    featLayer.on('ready', function() { 
-          this.eachLayer(function(feature) { 
-          style: getMyStyle; 
-          })
+          featLayer.eachLayer(function(polygon) { 
+            polygon.setStyle ({
+            fillColor: '#9F1212',
+            
+            }); 
+          }); 
+  });        
                
  // https://www.mapbox.com/mapbox.js/example/v1.0.0/choropleth/
-          function getMyStyle(feature) {
-            return {
-              weight: 4, 
-              fillOpacity: 0.08, 
-              // fillColor: getColor(feature.properties.parking)
-              //   color: getColor(feature.properties.density) * 0.4; 
-            };
-          } 
+      //     function getMyStyle(feature) {
+      //       return {
+      //         weight: 4, 
+      //         fillOpacity: 0.08, 
+      //         // fillColor: getColor(feature.properties.parking)
+      //         //   color: getColor(feature.properties.density) * 0.4; 
+      //       };
+      //     }                                              
+      // });                                                  
 
-          function getColor(thevalue){
-                  console.log(thevalue);
+
+          //function getColor(thevalue){
+            //      console.log(thevalue);
                     //return {
                     
                     // thevalue = "multi-storey" ? '#ff0000': 
@@ -55,8 +61,7 @@
                     // thevalue == "underground" ?  "#FF1717":
                     // ;
                  //   }
-          }
-    }).addTo(mizzap);  
+          
    
 
   
