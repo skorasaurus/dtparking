@@ -13,7 +13,7 @@
     
 
       
-            var basemap = new L.TileLayer('https://{s}.tiles.mapbox.com/v3/skorasaurus.5eb85050/{z}/{x}/{y}.png', {maxZoom: 19});
+            var basemap = new L.TileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {maxZoom: 19});
             var latlng = new L.LatLng(41.500880,-81.694036);
                 
             var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap]});
