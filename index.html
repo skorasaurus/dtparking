@@ -31,13 +31,29 @@
 
    featLayer.loadURL('dtparking.geojson'); 
 
+// from http://geosprocket.github.io/btv-geographic/social/
+// 
+function getMyStyle(myargument) {
+ if (myargument === 'multi-storey') {
+     return '#F2FA06'
+     }; 
+ if (myargument === 'surface') {
+     return '#F2FA06'
+     }; 
+ if (myargument === 'underground') {
+     return '#F2FA06'
+     }; 
+}
+
+
    featLayer.on('ready', function() { 
           featLayer.eachLayer(function(polygon) { 
-            polygon.setStyle ({
-            fillColor: '#9F1212',
-            fillOpacity: 0.55,
-            color: '#BF1B1B',
-            opacity: 0.55 // stroke opacity
+            polygon.setStyle ({  
+            opacity: 0.55,
+            fillOpacity: 0.55 ,
+            fillColor: getMyStyle(polygon.properties.parking), 
+            color: '#BF1B1B'
+           // stroke opacity
             }); 
           }); 
   });        
