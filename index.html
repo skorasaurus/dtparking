@@ -28,19 +28,21 @@
 
    // featLayer.loadURL('dtparking.geojson').addTo(mizzap);  
   
-
-   featLayer.loadURL('dtparking.geojson'); 
-
-   featLayer.on('ready', function() { 
-          featLayer.eachLayer(function(polygon) { 
-            polygon.setStyle ({
-            fillColor: '#9F1212',
+var getMyStyle = 
+  { fillColor: '#9F1212',
             fillOpacity: 0.55,
             color: '#BF1B1B',
-            opacity: 0.55 // stroke opacity
-            }); 
-          }); 
-  });        
+            opacity: 0.55
+          };
+
+   myvariable = featLayer.loadURL('dtparking.geojson'); 
+
+   myvariable.on('ready', function() { 
+    L.geoJson(myvariable, 
+    style: getMyStyle
+      ).addTo(mizzap);
+
+
                
  // https://www.mapbox.com/mapbox.js/example/v1.0.0/choropleth/
       //     function getMyStyle(feature) {
