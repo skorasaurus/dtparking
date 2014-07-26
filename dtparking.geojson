@@ -3536,6 +3536,7 @@
         "@id": "way/115175877",
         "access": "permissive",
         "amenity": "parking",
+        "parking": "surface",
         "fee": "yes"
       },
       "geometry": {
