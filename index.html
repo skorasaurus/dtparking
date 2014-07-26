@@ -34,32 +34,29 @@
 // 
 function getMyColor(myargument) {
  if (myargument === 'multi-storey') {
-     return '#F2FA06'
+     return '#00ff66'
      }; 
  if (myargument === 'surface') {
-     return '#F2FA06'
+     return '#6600ff'
      }; 
  if (myargument === 'underground') {
-     return '#F2FA06'
+     return '#ff6600'
      }; 
 }
-
-function myStyleFunction(feature) {
- return {  
-            opacity: 0.55,
-            fillOpacity: 0.55,
-            fillColor: getMyColor(feature.properties.parking), 
-            color: '#BF1B1B' // stroke
-            }; 
-}            
 
 
    featLayer.on('ready', function() { 
           featLayer.eachLayer(function(polygon) { 
             polygon.bindPopup('This is a ' + polygon.feature.properties.parking + ' parking lot');
-            polygon.setStyle(myStyleFunction); 
+            console.log(typeof setStyle);
+            polygon.setStyle ({  
+              opacity: 0.55,
+              fillOpacity: 0.55,
+              fillColor: getMyColor(polygon.feature.properties.parking), 
+              color: '#BF1B1B'
+            }); 
           }); 
-  });        
+    });             
                
  // https://www.mapbox.com/mapbox.js/example/v1.0.0/choropleth/
       //     function getMyStyle(feature) {
