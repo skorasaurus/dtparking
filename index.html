@@ -56,7 +56,7 @@ function myStyleFunction(feature) {
 
    featLayer.on('ready', function() { 
           featLayer.eachLayer(function(polygon) { 
-            polygon.bindPopup('Hello');
+            polygon.bindPopup('This is a ' + polygon.feature.properties.parking + ' parking lot');
             polygon.setStyle(myStyleFunction); 
           }); 
   });        
