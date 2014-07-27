@@ -16,7 +16,10 @@
             var basemap = new L.TileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {maxZoom: 19});
             var latlng = new L.LatLng(41.500880,-81.694036);
                 
-            var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap]});
+            var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap], });
+
+            
+            mizzap.attributionControl.addAttribution('Data \u00a9 <a href="http://www.openstreetmap.org/copyright"> OpenStreetMap Contributors </a> | Tiles from <a href="http://stamen.com/"> Stamen </a> under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA');
                 
               // https://www.mapbox.com/foundations/building-a-store-locator/
               // initializes feature layer for use later: 
