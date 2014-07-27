@@ -1,6 +1,8 @@
 dtparking
 =========
 
-data set of parking lots in Downtown Cleveland that are publically accessable. 
+data set of parking lots in Downtown Cleveland that are publicly accessable. 
 
-These are simply derived from OpenStreetMap so license is ODBL. 
+The geographic data is simply derived from OpenStreetMap so the license is ODBL. 
+
+Code is CC0. 
