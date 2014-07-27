@@ -34,13 +34,13 @@
 // 
 function getMyColor(myargument) {
  if (myargument === 'multi-storey') {
-     return '#00ff66'
+     return '#996767'
      }; 
  if (myargument === 'surface') {
-     return '#6600ff'
+     return '#679967'
      }; 
  if (myargument === 'underground') {
-     return '#ff6600'
+     return '#676799'
      }; 
 }
 
@@ -53,7 +53,7 @@ function getMyColor(myargument) {
               opacity: 0.55,
               fillOpacity: 0.55,
               fillColor: getMyColor(polygon.feature.properties.parking), 
-              color: '#BF1B1B'
+              color: getMyColor(polygon.feature.properties.parking) * 1.04,
             }); 
           }); 
     });             
