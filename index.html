@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+<meta charset="utf-8" />
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
-
+<title> Downtown Cleveland Parking Map </title> 
     </head>
   <body>
+  <style>
+.legend label,
+.legend span {
+  display:block;
+  float:left;
+  height:15px;
+  width:20%;
+  text-align:center;
+  font-size:9px;
+  color:#808080;
+  }
+</style>
+<div id='legend' style='display:none;'>
+  <strong>Downtown Cleveland Parking</strong>
+  <nav class='legend clearfix'>
+    <span style='background:#679967;'></span>
+    <span style='background:#996767;'></span>
+    <span style='background:#676799;'></span>
+    <label>Surface</label>
+    <label>Multi-Level</label>
+    <label>Underground</label>
+</div>
+
     <div id="map" style="width: 100%; height: 600px; border: 1px solid #ccc;"></div>
 
         <script> 
-    
 
-      
-            var basemap = new L.TileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {maxZoom: 19});
-            var latlng = new L.LatLng(41.500880,-81.694036);
-                
-            var mizzap = new L.Map('map', {center: latlng, zoom: 15, layers: [basemap], });
+ // prepare for 2.0 
+// L.mapbox.accessToken = pk.eyJ1Ijoic2tvcmFzYXVydXMiLCJhIjoiaEdGTUZWTSJ9.osOC8tWU3bMaNprVNoEu7g; 
 
+var mizzap = L.mapbox.map('map', 'skorasaurus.5eb85050')
+    .setView([41.500880,-81.694036], 16);
             
-            mizzap.attributionControl.addAttribution('Data \u00a9 <a href="http://www.openstreetmap.org/copyright"> OpenStreetMap Contributors </a> | Tiles from <a href="http://stamen.com/"> Stamen </a> under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA');
+    mizzap.attributionControl.addAttribution('Data \u00a9 <a href="http://www.openstreetmap.org/copyright"> OpenStreetMap Contributors </a>');
                 
               // https://www.mapbox.com/foundations/building-a-store-locator/
               // initializes feature layer for use later: 
@@ -32,6 +55,10 @@
    // featLayer.loadURL('dtparking.geojson').addTo(mizzap);  
   
    featLayer.loadURL('dtparking.geojson'); 
+
+// or should it be mizzap.legendControl
+ mizzap.legendControl.addLegend(document.getElementById('legend').innerHTML);
+
 
 // from http://geosprocket.github.io/btv-geographic/social/
 // 
@@ -59,35 +86,7 @@ function getMyColor(myargument) {
               color: getMyColor(polygon.feature.properties.parking) * 1.04,
             }); 
           }); 
-    });             
-               
- // https://www.mapbox.com/mapbox.js/example/v1.0.0/choropleth/
-      //     function getMyStyle(feature) {
-      //       return {
-      //         weight: 4, 
-      //         fillOpacity: 0.08, 
-      //         // fillColor: getColor(feature.properties.parking)
-      //         //   color: getColor(feature.properties.density) * 0.4; 
-      //       };
-      //     }                                              
-      // });                                                  
-
-
-          //function getColor(thevalue){
-            //      console.log(thevalue);
-                    //return {
-                    
-                    // thevalue = "multi-storey" ? '#ff0000': 
-                    // thevalue = "surface" ?  "#AD3535":
-                    // thevalue == "underground" ?  "#FF1717":
-                    // ;
-                 //   }
-          
-   
-
-  
-
- // mizzap.legendControl.addLegend(document.getElementById('legend').innerHTML);
+    });            
 
             </script>
         
