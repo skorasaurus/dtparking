@@ -1,8 +1,5 @@
 {
   "type": "FeatureCollection",
-  "generator": "overpass-turbo",
-  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2014-07-27T19:04:02Z",
   "features": [
     {
       "type": "Feature",
@@ -1384,7 +1381,7 @@
         "@id": "way/101535932",
         "amenity": "parking",
         "fee": "yes",
-        "parking": "surface"
+        "parking": "multi-storey"
       },
       "geometry": {
         "type": "Polygon",
@@ -2718,7 +2715,7 @@
         "@id": "way/107493145",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "0",
+        "layer": 0,
         "parking": "surface"
       },
       "geometry": {
@@ -2906,7 +2903,7 @@
         "@id": "way/107493151",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "0",
+        "layer": 0,
         "parking": "surface"
       },
       "geometry": {
@@ -2955,7 +2952,7 @@
       "properties": {
         "@id": "way/111821510",
         "amenity": "parking",
-        "capacity": "1000",
+        "capacity": 1000,
         "name": "North Point Parking Garage",
         "parking": "multi-storey"
       },
@@ -4188,7 +4185,7 @@
         "@id": "way/116484454",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "0",
+        "layer": 0,
         "parking": "surface"
       },
       "geometry": {
@@ -4295,7 +4292,7 @@
         "@id": "way/116620433",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "-2",
+        "layer": -2,
         "parking": "underground"
       },
       "geometry": {
@@ -4863,7 +4860,7 @@
         "@id": "way/122844674",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "0",
+        "layer": 0,
         "parking": "surface"
       },
       "geometry": {
@@ -4941,7 +4938,7 @@
         "@id": "way/126820685",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "0",
+        "layer": 0,
         "parking": "underground"
       },
       "geometry": {
@@ -5826,7 +5823,7 @@
         "@id": "way/137674877",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "0",
+        "layer": 0,
         "parking": "surface"
       },
       "geometry": {
@@ -6430,7 +6427,7 @@
       "properties": {
         "@id": "way/150625534",
         "amenity": "parking",
-        "layer": "1",
+        "layer": 1,
         "parking": "underground"
       },
       "geometry": {
@@ -6731,7 +6728,7 @@
         "@id": "way/152754635",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "0",
+        "layer": 0,
         "parking": "surface"
       },
       "geometry": {
@@ -6781,7 +6778,7 @@
         "@id": "way/152754637",
         "amenity": "parking",
         "fee": "yes",
-        "layer": "0",
+        "layer": 0,
         "parking": "surface"
       },
       "geometry": {
@@ -6839,7 +6836,7 @@
         "@id": "way/152855973",
         "access": "permissive",
         "amenity": "parking",
-        "layer": "-1",
+        "layer": -1,
         "parking": "underground"
       },
       "geometry": {
@@ -7804,65 +7801,6 @@
     },
     {
       "type": "Feature",
-      "id": "way/173055913",
-      "properties": {
-        "@id": "way/173055913",
-        "amenity": "parking"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -81.6989771,
-              41.4948507
-            ],
-            [
-              -81.6990943,
-              41.494686
-            ],
-            [
-              -81.697883,
-              41.4952019
-            ],
-            [
-              -81.6968524,
-              41.4954689
-            ],
-            [
-              -81.6948571,
-              41.495575
-            ],
-            [
-              -81.6948717,
-              41.4958385
-            ],
-            [
-              -81.6957998,
-              41.4958458
-            ],
-            [
-              -81.6970209,
-              41.4956592
-            ],
-            [
-              -81.698027,
-              41.4954433
-            ],
-            [
-              -81.6988623,
-              41.4949348
-            ],
-            [
-              -81.6989771,
-              41.4948507
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
       "id": "way/177041927",
       "properties": {
         "@id": "way/177041927",
@@ -8454,36 +8392,71 @@
     },
     {
       "type": "Feature",
-      "id": "node/1534244798",
       "properties": {
-        "@id": "node/1534244798",
-        "amenity": "parking",
+        "parking": "multi-storey",
         "fee": "yes",
-        "operator": "Galleria at Erieview",
-        "parking": "underground"
+        "amenity": "parking"
       },
       "geometry": {
-        "type": "Point",
+        "type": "Polygon",
         "coordinates": [
-          -81.6902287,
-          41.5052891
+          [
+            [
+              -81.70360565185547,
+              41.501321864942454
+            ],
+            [
+              -81.70432716608047,
+              41.50104263908576
+            ],
+            [
+              -81.70408844947815,
+              41.50072122653719
+            ],
+            [
+              -81.70342057943344,
+              41.50106875378526
+            ],
+            [
+              -81.70360565185547,
+              41.501321864942454
+            ]
+          ]
         ]
       }
     },
     {
       "type": "Feature",
-      "id": "node/2939857111",
       "properties": {
-        "@id": "node/2939857111",
         "amenity": "parking",
-        "fee": "yes",
-        "parking": "multi-storey"
+        "parking": "underground",
+        "fee": "yes"
       },
       "geometry": {
-        "type": "Point",
+        "type": "Polygon",
         "coordinates": [
-          -81.7041004,
-          41.5010554
+          [
+            [
+              -81.68925046920776,
+              41.50526705699173
+            ],
+            [
+              -81.69002294540404,
+              41.50491352616486
+            ],
+            [
+              -81.68961524963379,
+              41.50435108678028
+            ],
+            [
+              -81.68890714645386,
+              41.50488138690305
+            ],
+            [
+              -81.68925046920776,
+              41.50526705699173
+            ]
+          ]
         ]
       }
     }
