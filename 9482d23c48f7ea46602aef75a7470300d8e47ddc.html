@@ -28,33 +28,36 @@
 
    // featLayer.loadURL('dtparking.geojson').addTo(mizzap);  
   
-
-   featLayer.loadURL('a8edcb4c581b6c0a5a6e715df24cb5e7392847fc.geojson'); 
+   featLayer.loadURL('dtparking.geojson'); 
 
 // from http://geosprocket.github.io/btv-geographic/social/
 // 
-function getMyStyle(myargument) {
+function getMyColor(myargument) {
  if (myargument === 'multi-storey') {
-     return '#00ff66'
+     return '#F2FA06'
      }; 
  if (myargument === 'surface') {
-     return '#6600ff'
+     return '#F2FA06'
      }; 
  if (myargument === 'underground') {
-     return '#ff6600'
+     return '#F2FA06'
      }; 
 }
+
+function myStyleFunction(feature) {
+ return {  
+            opacity: 0.55,
+            fillOpacity: 0.55,
+            fillColor: getMyColor(feature.properties.parking), 
+            color: '#BF1B1B' // stroke
+            }; 
+}            
 
 
    featLayer.on('ready', function() { 
           featLayer.eachLayer(function(polygon) { 
-            polygon.setStyle ({  
-            opacity: 0.55,
-            fillOpacity: 0.55,
-            fillColor: getMyStyle(polygon.feature.properties.parking), 
-            color: '#BF1B1B'
-           // stroke opacity
-            }); 
+            polygon.bindPopup('This is a ' + polygon.feature.properties.parking + ' parking lot');
+            polygon.setStyle(myStyleFunction); 
           }); 
   });        
                
