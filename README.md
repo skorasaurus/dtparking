@@ -1,20 +1,20 @@
 dtparking
 =========
 
-Data set of parking lots in Downtown Cleveland (Ohio) that are publicly accessable. 
+Data set of parking lots in Downtown Cleveland, Ohio that are publicly accessable. 
 
-View them at: http://skorasaurus.github.io/dtparking 
+View them in a map at: http://skorasaurus.github.io/dtparking 
+Base map - Pascal Pastel, is designed by me and can be obtained as a style at https://github.com/skorasaurus/pascalpastel.tm2
 
-The geographic data is simply derived from OpenStreetMap so the license is ODBL. 
+The geographic data of parking lots is from OpenStreetMap so the license is [ODBL](http://www.openstreetmap.org/copyright). 
 
-Code is under MIT License. 
+html Code is under MIT License. 
 
 To obtain downtown parking lots for your downtown: 
 
 Use the following overpass query: http://overpass-turbo.eu/s/4mn
-Move in map to your preferred geographic area 
+Move the map to your preferred geographic area 
 Hit Run 
 Export as geojson and save as a geojson file place in directory of your fork. 
-
 
 index.html is the only html code that you'll really need to use. the other html files are from older commits that I have published so I can use them in a blog post. 
