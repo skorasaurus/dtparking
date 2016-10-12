@@ -6,7 +6,7 @@
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
-<title> Downtown Cleveland Parking Map </title> 
+<title> Downtown Cleveland Public Parking Map </title> 
     </head>
   <body>
   <style>
@@ -22,7 +22,7 @@
   }
 </style>
 <div id='legend' style='display:none;'>
-  <strong>Downtown Cleveland Parking</strong>
+  <strong>Downtown Cleveland Public Parking</strong>
   <nav class='legend clearfix'>
  <label>Surface         </label>   <span style='background:#679967;'></span>    <br>
   <label>Multi-Level             </label>  <span style='background:#996767;'></span>  <br> 
@@ -48,7 +48,7 @@ var mizzap = L.mapbox.map('mapid', 'skorasaurus.5eb85050')
 // https://github.com/maptime/maptime-bites/blob/gh-pages/00004/index.html
 var featLayer = L.mapbox.featureLayer().addTo(mizzap);
 
-featLayer.loadURL('dtparking.geojson');
+featLayer.loadURL('map2.geojson');
 
 mizzap.legendControl.addLegend(document.getElementById('legend').innerHTML);
 
